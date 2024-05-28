@@ -14,13 +14,16 @@ def describe_numerical(df):
     return numerical_stats
 
 def summarize_time_series(df, date_column):
+    # Create a copy of the DataFrame
+    df_copy = df.copy()
+    
     # Convert the date column to datetime
-    df[date_column] = pd.to_datetime(df[date_column])
+    df_copy[date_column] = pd.to_datetime(df_copy[date_column])
     
     # Compute the minimum (start) date, maximum (end) date, and number of unique dates
-    min_date = df[date_column].min()
-    max_date = df[date_column].max()
-    num_unique_dates = df[date_column].nunique()
+    min_date = df_copy[date_column].min()
+    max_date = df_copy[date_column].max()
+    num_unique_dates = df_copy[date_column].nunique()
 
     # Print the results
     print('Number of Unique Dates:', num_unique_dates)

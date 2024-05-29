@@ -229,3 +229,14 @@ def merged_by_date_two_cols_plot(df1, df2, col1, col2, date_col1, date_col2):
     # Show the plot
     plt.show()
 
+def plot_categorical_distribution(train, test, column):
+    fig, ax = plt.subplots(1, 2, figsize=(14, 7))
+
+    sns.countplot(x=column, data=train, ax=ax[0])
+    ax[0].set_title('Training set')
+
+    sns.countplot(x=column, data=test, ax=ax[1])
+    ax[1].set_title('Test set')
+
+    plt.suptitle(f'Distribution of {column} in training and test sets')
+    plt.show()

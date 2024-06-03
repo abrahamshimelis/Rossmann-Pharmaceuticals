@@ -2,3 +2,5 @@ data
 venv
 
 notebooks/model-2024-06-03-00-28-34.pkl
+
+notebooks/lstm_model-2024-06-03-05-03-20.h5
